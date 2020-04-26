@@ -35,7 +35,7 @@ public class Sim extends AppCompatActivity
         logintime=(rand.nextInt(3)+2);
     }
 
-    public void Returnit(View view) { startActivity(new Intent(Sim.this,MainActivity.class)); }
+    public void Returnit(View view) { startActivity(new Intent(Sim.this, MainActivity.class)); }
 
     public void Checkit(View view)
     {

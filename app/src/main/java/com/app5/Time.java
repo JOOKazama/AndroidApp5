@@ -36,7 +36,7 @@ public class Time extends AppCompatActivity
         catch (InterruptedException e) { e.printStackTrace(); }
     }
 
-    public void Returnit(View view) { startActivity(new Intent(Time.this,MainActivity.class)); }
+    public void Returnit(View view) { startActivity(new Intent(Time.this, MainActivity.class)); }
 
     Runnable runnable=new Runnable()
     {

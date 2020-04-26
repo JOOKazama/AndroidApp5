@@ -19,12 +19,12 @@ public class MainActivity extends AppCompatActivity
         third=findViewById(R.id.third);
 
         first.setOnClickListener(new View.OnClickListener()
-        { @Override public void onClick(View v) { startActivity(new Intent(MainActivity.this,Login.class)); } });
+        { @Override public void onClick(View v) { startActivity(new Intent(MainActivity.this, Login.class)); } });
 
         second.setOnClickListener(new View.OnClickListener()
-        { @Override public void onClick(View v) { startActivity(new Intent(MainActivity.this,Time.class)); } });
+        { @Override public void onClick(View v) { startActivity(new Intent(MainActivity.this, Time.class)); } });
 
         third.setOnClickListener(new View.OnClickListener()
-        { @Override public void onClick(View v) { startActivity(new Intent(MainActivity.this,Sim.class)); } });
+        { @Override public void onClick(View v) { startActivity(new Intent(MainActivity.this, Sim.class)); } });
     }
 }
