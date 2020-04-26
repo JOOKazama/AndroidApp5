@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">app5</string>
+    <string name="email">Enter email:</string>
+    <string name="password">Enter password:</string>
+    <string name="login">Login</string>
+    <string name="validation">Result of the validation:</string>
+    <string name="check">Check</string>
+    <string name="return1">Return</string>
+    <string name="first">First assignment</string>
+    <string name="second">Second assignment</string>
+    <string name="third">Third assignment</string>
+    <string name="sec">The count of seconds will be displayed here:</string>
+    <string name="start">Start!</string>
+    <string name="first_task">First task:</string>
+    <string name="second_task">Second task:</string>
+    <string name="pause">Pause!</string>
+    <string name="result">Result: </string>
+</resources>
