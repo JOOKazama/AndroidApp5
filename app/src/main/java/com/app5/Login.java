@@ -18,6 +18,7 @@ public class Login extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+        setTitle("Login");
 
         editText=findViewById(R.id.editText);
         editText2=findViewById(R.id.editText2);

@@ -13,7 +13,7 @@ public class Time extends AppCompatActivity
 {
     Button button2, button4;
     TextView textView4;
-    Thread thread=new Thread();
+    static Thread thread=new Thread();
     Boolean pause=false;
     Handler handler=new Handler(Looper.getMainLooper());
 
@@ -21,6 +21,7 @@ public class Time extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.time);
+        setTitle("Timer");
 
         button2=findViewById(R.id.button2);
         button4=findViewById(R.id.button4);
@@ -31,33 +32,37 @@ public class Time extends AppCompatActivity
 
     public void Pause(View view)
     {
-        pause=true;
-        try { Thread.sleep(5000); }
-        catch (InterruptedException e) { e.printStackTrace(); }
+        if(!pause)
+        {
+            pause=true;
+            button2.setText("Start!");
+        }
+        else
+        {
+            pause=false;
+            button2.setText("Pause!");
+        }
     }
-
     public void Returnit(View view) { startActivity(new Intent(Time.this, MainActivity.class)); }
 
     Runnable runnable=new Runnable()
     {
-        @SuppressLint("SetTextI18n") @Override public void run()
+        @SuppressLint("SetTextI18n")
+        @Override public void run()
         {
-                for(int i=0; i<100000; i++)
+            for(int i=0; i<10000000; i++)
+            {
+                if(button2.getText().equals("Pause!"))
                 {
-                    final int finalI = i;
-                    handler.post(new Runnable() { @Override public void run() { textView4.setText(finalI +" sec."); } });
-                    if(pause)
-                    {
-                         i=i-5;
-                         pause=false;
-                    }
-                    else
-                    {
-                        try { Thread.sleep(1000); }
-                        catch (InterruptedException e) { e.printStackTrace(); }
-                    }
+                    final int i1=i;
+                    handler.post(new Runnable() { @Override public void run() { textView4.setText(i1+" seconds passed!"); } });
+                    try { Thread.sleep(500); } catch (InterruptedException e) { e.printStackTrace(); }
+                }
+                else
+                {
+                    i=Integer.parseInt(textView4.getText().toString().split("[ a-z]")[0]);
                 }
             }
-
+        }
     };
 }

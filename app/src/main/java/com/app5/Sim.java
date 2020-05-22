@@ -24,6 +24,8 @@ public class Sim extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sim);
+        setTitle("Simulation");
+
         return2=findViewById(R.id.return2);
         button5=findViewById(R.id.button5);
         progressBar=findViewById(R.id.progressBar);

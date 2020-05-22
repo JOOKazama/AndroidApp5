@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("Main Page");
 
         first=findViewById(R.id.first);
         second=findViewById(R.id.second);
