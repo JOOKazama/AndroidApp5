@@ -28,21 +28,25 @@ public class Time extends AppCompatActivity
         textView4=findViewById(R.id.textView4);
         thread=new Thread(runnable);
         thread.start();
+
+        button2.setOnClickListener(new View.OnClickListener()
+        {
+            @Override public void onClick(View v)
+            {
+                if(!pause)
+                {
+                    pause=true;
+                    button2.setText("Start!");
+                }
+                else
+                {
+                    pause=false;
+                    button2.setText("Pause!");
+                }
+            }
+        });
     }
 
-    public void Pause(View view)
-    {
-        if(!pause)
-        {
-            pause=true;
-            button2.setText("Start!");
-        }
-        else
-        {
-            pause=false;
-            button2.setText("Pause!");
-        }
-    }
     public void Returnit(View view) { startActivity(new Intent(Time.this, MainActivity.class)); }
 
     Runnable runnable=new Runnable()
@@ -56,12 +60,9 @@ public class Time extends AppCompatActivity
                 {
                     final int i1=i;
                     handler.post(new Runnable() { @Override public void run() { textView4.setText(i1+" seconds passed!"); } });
-                    try { Thread.sleep(500); } catch (InterruptedException e) { e.printStackTrace(); }
+                    try{ Thread.sleep(500); } catch (InterruptedException e) { e.printStackTrace(); }
                 }
-                else
-                {
-                    i=Integer.parseInt(textView4.getText().toString().split("[ a-z]")[0]);
-                }
+                else{ i=Integer.parseInt(textView4.getText().toString().split("[ a-z]")[0]); }
             }
         }
     };
