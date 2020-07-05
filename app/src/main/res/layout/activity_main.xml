@@ -4,17 +4,17 @@
         xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".Main.MainActivity">
 
     <Button
             android:text="@string/first"
             android:layout_width="157dp"
             android:layout_height="54dp"
-            android:id="@+id/first"
+            android:id="@+id/first_assignment"
             tools:ignore="MissingConstraints"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="30dp" android:layout_marginBottom="17dp"
-            app:layout_constraintBottom_toTopOf="@+id/second" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/second_assignment" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="129dp" android:layout_marginStart="129dp"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="125dp"
             android:layout_marginRight="125dp" app:layout_constraintHorizontal_bias="0.0"
@@ -23,17 +23,17 @@
             android:text="@string/second"
             android:layout_width="157dp"
             android:layout_height="54dp"
-            android:id="@+id/second"
+            android:id="@+id/second_assignment"
             tools:ignore="MissingConstraints"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="129dp" android:layout_marginStart="129dp" android:layout_marginBottom="13dp"
-            app:layout_constraintBottom_toTopOf="@+id/third"
+            app:layout_constraintBottom_toTopOf="@+id/third_assignment"
     />
     <Button
             android:text="@string/third"
             android:layout_width="157dp"
             android:layout_height="54dp"
-            android:id="@+id/third"
+            android:id="@+id/third_assignment"
             tools:ignore="MissingConstraints"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="128dp" android:layout_marginStart="128dp"

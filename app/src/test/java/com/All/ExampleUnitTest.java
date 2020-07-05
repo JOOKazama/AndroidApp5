@@ -1,4 +1,4 @@
-package com.app5;
+package com.All;
 
 import org.junit.Test;
 

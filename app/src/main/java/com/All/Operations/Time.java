@@ -1,4 +1,4 @@
-package com.app5;
+package com.All.Operations;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,11 +8,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import com.All.Main.MainActivity;
+import com.All.R;
 
 public class Time extends AppCompatActivity
 {
-    Button button2, button4;
-    TextView textView4;
+    Button button_pause, button_return;
+    TextView display_seconds;
     static Thread thread=new Thread();
     Boolean pause=false;
     Handler handler=new Handler(Looper.getMainLooper());
@@ -23,31 +25,31 @@ public class Time extends AppCompatActivity
         setContentView(R.layout.time);
         setTitle("Timer");
 
-        button2=findViewById(R.id.button2);
-        button4=findViewById(R.id.button4);
-        textView4=findViewById(R.id.textView4);
+        button_pause=findViewById(R.id.button_pause);
+        button_return=findViewById(R.id.button_return);
+        display_seconds=findViewById(R.id.display_seconds);
         thread=new Thread(runnable);
         thread.start();
 
-        button2.setOnClickListener(new View.OnClickListener()
+        button_pause.setOnClickListener(new View.OnClickListener()
         {
             @Override public void onClick(View v)
             {
                 if(!pause)
                 {
                     pause=true;
-                    button2.setText("Start!");
+                    button_pause.setText("Start!");
                 }
                 else
                 {
                     pause=false;
-                    button2.setText("Pause!");
+                    button_pause.setText("Pause!");
                 }
             }
         });
     }
 
-    public void Returnit(View view) { startActivity(new Intent(Time.this, MainActivity.class)); }
+    public void Return_Main(View view) { startActivity(new Intent(Time.this, MainActivity.class)); }
 
     Runnable runnable=new Runnable()
     {
@@ -56,13 +58,13 @@ public class Time extends AppCompatActivity
         {
             for(int i=0; i<10000000; i++)
             {
-                if(button2.getText().equals("Pause!"))
+                if(button_pause.getText().equals("Pause!"))
                 {
-                    final int i1=i;
-                    handler.post(new Runnable() { @Override public void run() { textView4.setText(i1+" seconds passed!"); } });
+                    final int final_integer=i;
+                    handler.post(new Runnable() { @Override public void run() { display_seconds.setText(final_integer+" seconds passed!"); } });
                     try{ Thread.sleep(500); } catch (InterruptedException e) { e.printStackTrace(); }
                 }
-                else{ i=Integer.parseInt(textView4.getText().toString().split("[ a-z]")[0]); }
+                else{ i=Integer.parseInt(display_seconds.getText().toString().split("[ a-z]")[0]); }
             }
         }
     };
